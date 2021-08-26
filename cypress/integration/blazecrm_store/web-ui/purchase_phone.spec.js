@@ -18,16 +18,22 @@ describe('Login & purchase a phone', () => {
         cy.get('button').contains('Log in').click()
         cy.wait(1000)
         cy.get('#nameofuser').contains('Welcome pc').should('exist')
+    
     // Site logs out, if I use a different test, so commenting out those items, as the API login is not allowed
     //})
     //it('successfully loads the phone details page', () => {
+    
         cy.get('.list-group-item').contains('Phones').should('have.attr', 'href', '#').click()
+    
     //})
     //it('successfully adds the samsung galaxy s6 phone to cart', () => {
+    
         cy.get('.hrefch').contains('Samsung galaxy s6').click()
         cy.get('.btn-success').contains('Add to cart').click()
+    
     //})
     //it('successfully checks the cart and purchases the phone', () => {
+    
         cy.get('#cartur').contains('Cart').click()
         cy.wait(1000)
     
@@ -47,6 +53,7 @@ describe('Login & purchase a phone', () => {
         cy.get('#month').type('11')
         cy.get('#year').type('2022')
         cy.get('.btn-primary').contains('Purchase').click()
+        // Confirm that the items have been purchased
         cy.get('h2').contains('Thank you for your purchase!').should('exist')
         cy.get('.btn-primary').contains('OK').click()
         // Issue with the website not closing the purchase popup
