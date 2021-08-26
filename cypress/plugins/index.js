@@ -11,8 +11,8 @@ const faker = require('faker');
 module.exports = (on, config) => {
   on("task", {
     newUser() {
-      user = {
-        id: faker.random.id(),
+      user = [{
+        id: faker.random.number(),
         username: faker.name.firstName(),
         firstName: faker.name.firstName(),
         lastName: faker.name.lastName(),
@@ -20,7 +20,7 @@ module.exports = (on, config) => {
         password: faker.internet.password(),
         phone: faker.phone.phoneNumber(),
         userStatus: 0
-      };
+      }];
       return user;
     }
   })

@@ -24,10 +24,10 @@ describe('Given the Users API', () => {
         url: '/user/createWithList',
         body: fakeUser
       })
-        .should((response) => {
-          expect(response.status).eq(201)
-          expect(response.body.message).eq("The new user creation was successful")
-        });
+      .should((response) => {
+        expect(response.status).eq(200)
+        expect(response.body.message).eq("ok")
+      });
     });
   });
 });

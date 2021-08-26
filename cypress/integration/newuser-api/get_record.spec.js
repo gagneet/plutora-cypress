@@ -7,26 +7,9 @@
 // This file checks the record, and then gets the user created earlier
 /// <reference types="cypress" />
 
-describe('Given the Users API', () => {
-    context('When I send GET /user/{_username}', () => {
-      it('Then it should return a list with all registered users', () => {
-        cy.request({
-          method: 'GET',
-          url: '/user/_username'
-        })
-          .should((response) => {
-            expect(response.status).to.eq(200)
-            expect(response.body.quantity).to.eq(response.body.newusers.length)
-            Cypress._.each(response.body.newusers, (newuser) => {
-              expect(newuser.email).to.not.be.null
-              expect(newuser).to.have.all.keys('id', '_username', 'firstName', 'lastName', 'email', 'password', 'phone', 'userStatus')
-            })
-          });
-      });
-    });
-  
+describe('Given the Users API', () => {  
     context('When I send GET /user/{username} passing username query param', () => {
-      it('Then it should return only the filtered user', () => {
+      it('Then it should return the user {username} provided in the request', () => {
         cy.request({
           method: 'GET',
           url: '/user/_username',
@@ -40,4 +23,21 @@ describe('Given the Users API', () => {
           });
       });
     });
+
+    context('When I send GET /user/{_username}', () => {
+      it('Then it should return the user with the given username', () => {
+        cy.request({
+          method: 'GET',
+          url: '/user/_username'
+        })
+          .should((response) => {
+            expect(response.status).to.eq(200)
+            expect(response.body.quantity).to.eq(response.body.newusers.length)
+            Cypress._.each(response.body.newusers, (newuser) => {
+              expect(newuser.email).to.not.be.null
+              expect(newuser).to.have.all.keys('id', '_username', 'firstName', 'lastName', 'email', 'password', 'phone', 'userStatus')
+            })
+          });
+      });
+    });    
   });

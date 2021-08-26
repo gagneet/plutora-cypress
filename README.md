@@ -16,7 +16,7 @@ npx cypress open
 
 ### To run the API tests
 - Run the npx command above
-- Change the 'baseURL' in cypress.json to "petstore.swagger.io/v2" 
+- Change the 'baseURL' in cypress.json to "https://petstore.swagger.io/v2" 
 - Open the newuser-api folder and click on
 - 'post_record.spec.js' & then on
 - 'get_record.spec.js'
