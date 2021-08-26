@@ -5,11 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "run",
-    "cypress:open": "cypress open"
+    "cypress:open": "./node_modules/.bin/cypress open",
+    "cypress:run": "./node_modules/.bin/cypress run --spec **/*.spec.js"    
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gagneet/cypress.git"
+    "url": "git+https://github.com/gagneet/plutora-cypress.git"
   },
   "keywords": [
     "cypress",
@@ -20,10 +21,11 @@
   "author": "gagneet",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/gagneet/cypress/issues"
+    "url": "https://github.com/gagneet/plutora-cypress/issues"
   },
-  "homepage": "https://github.com/gagneet/cypress#readme",
+  "homepage": "https://github.com/gagneet/plutora-cypress#readme",
   "devDependencies": {
-    "cypress": "^8.3.0"
+    "cypress": "^8.3.0",
+    "faker": "^5.5.3"    
   }
 }
