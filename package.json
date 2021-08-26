@@ -1,0 +1,29 @@
+{
+  "name": "cypress",
+  "version": "1.0.0",
+  "description": "Test Framework using Cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "run",
+    "cypress:open": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gagneet/cypress.git"
+  },
+  "keywords": [
+    "cypress",
+    "test",
+    "framework",
+    "ui"
+  ],
+  "author": "gagneet",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gagneet/cypress/issues"
+  },
+  "homepage": "https://github.com/gagneet/cypress#readme",
+  "devDependencies": {
+    "cypress": "^8.3.0"
+  }
+}
