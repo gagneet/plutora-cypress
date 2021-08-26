@@ -12,14 +12,14 @@ describe('Given the Users API', () => {
       it('Then it should return the user {username} provided in the request', () => {
         cy.request({
           method: 'GET',
-          url: '/user/_username',
+          url: '/user/{_username}',
           qs: {
             _username: 'newuser123'
           }
         })
           .should((response) => {
             expect(response.status).to.eq(200)
-            expect(response.body.newusers[0].name).to.eq("User ABC created")
+            expect(response.body.newusers[0].username).to.eq("User ABC created")
           });
       });
     });
@@ -28,7 +28,7 @@ describe('Given the Users API', () => {
       it('Then it should return the user with the given username', () => {
         cy.request({
           method: 'GET',
-          url: '/user/_username'
+          url: '/user/{_username}'
         })
           .should((response) => {
             expect(response.status).to.eq(200)
