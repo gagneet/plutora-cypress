@@ -11,7 +11,7 @@ npx cypress open
 - This opens a Chrome browser window and runs the test scenarios
 
 ### To run the API tests
-- Open the api folder and click on
+- Open the newuser-api folder and click on
 - 'post_record.spec.js' & then on
 - 'get_record.spec.js'
 - This opens a Chrome browser window and runs the test scenarios
