@@ -6,7 +6,7 @@
   "scripts": {
     "test": "run",
     "cypress:open": "./node_modules/.bin/cypress open",
-    "cypress:run": "./node_modules/.bin/cypress run --spec **/*.spec.js"    
+    "cypress:run": "./node_modules/.bin/cypress run --spec **/*.spec.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,6 @@
   "homepage": "https://github.com/gagneet/plutora-cypress#readme",
   "devDependencies": {
     "cypress": "^8.3.0",
-    "faker": "^5.5.3"    
+    "faker": "^5.5.3"
   }
 }

@@ -7,15 +7,19 @@ const faker = require('faker');
 /**
  * @type {Cypress.PluginConfig}
  */
-// eslint-disable-next-line no-unused-vars
+
 module.exports = (on, config) => {
   on("task", {
-    freshUser() {
+    newUser() {
       user = {
-        nome: faker.name.firstName(),
+        id: faker.random.id(),
+        username: faker.name.firstName(),
+        firstName: faker.name.firstName(),
+        lastName: faker.name.lastName(),
         email: faker.internet.email(),
         password: faker.internet.password(),
-        administrador: "true"
+        phone: faker.phone.phoneNumber(),
+        userStatus: 0
       };
       return user;
     }
