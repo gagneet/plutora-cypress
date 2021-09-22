@@ -1,0 +1,17 @@
+{
+  "loginPage": {
+    "title": "Login"
+  },
+  "profilePage": {
+    "title": "Profile",
+    "loggedInUsername": "automationuser"
+  },
+  "bookStorePage": {
+    "title": "Book Store",
+    "bookTitle": "Git Pocket Guide"
+  },
+  "alertTexts": {
+    "deleteBook": "Do you want to delete this book?",
+    "deleteAllBooks":"Do you want to delete all books?"
+  }
+}

@@ -1,3 +1,6 @@
 {
-    "baseUrl": "https://www.demoblaze.com/"
+  "testFiles": "**/*.feature",
+  "ignoreTestFiles": "**/*.{js,ts,md}",
+  "video": false,
+  "defaultCommandTimeout": 12000
 }

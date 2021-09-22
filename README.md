@@ -1,26 +1,25 @@
-# plutora-cypress
-Test suite for Plutora Cypress Interview
+# Book Store application Front End tests with Cypress & BDD (Cucumber)
+- These tests are designed to cover front end user journeys and can monitor network requests to cover end to end flow (The third scenario in the specs is example of stubbing network responses)
 
-# To run the code
+- All the configurations for facilitating BDD (using Cucumber) are in `cypress/plugins/index.js`
 
-npm install faker
+- TypeScript step definition files are in under `cypress/integration` (with suffix `steps.ts`)
 
-npx cypress open
+**Steps to execute tests:**
 
-- In the Cypress app, open folder integration
+**Steps:**
 
-### To run Browser UI tests
-- Run the npx command above 
-- Open web-ui folder and click on 'purchase_phone.spec.js'
-- This opens a Chrome browser window and runs the test scenarios
+Step 1: Open the project in any js code editor (for example, visual studio code)
 
-### To run the API tests
-- Run the npx command above
-- Change the 'baseURL' in cypress.json to "https://petstore.swagger.io/v2" 
-- Open the newuser-api folder and click on
-- 'post_record.spec.js' & then on
-- 'get_record.spec.js'
-- This opens a Chrome browser window and runs the test scenarios
+Step 2: From the root directory, execute `npm install` in terminal
 
-# To use Cypress with React based SPA
-- https://softchris.github.io/pages/cypress.html#adding-cypress-to-your-spa-app
+Step 3: Execute `npm run <script>` to execute tests. I have considered `dev` as test environment. So, please execute the relevant commands. In this case, you can just execute `npm run test:dev:debug` or `npm run test:dev:run` (to execute in headless mode)
+
+| Script            | Description                                                         | 
+| ----------------- | --------------------------------------------------------------------|
+|test:{env}:run     | Executes tests in headless browser in selected environment           |
+|test:{env}:debug   | Open cypress runner test in headed browser in selected environment  |
+
+Step4: Execute `npm run report` to generate test report after execution
+
+>Note: Reports are stored under `root/test/report` directory

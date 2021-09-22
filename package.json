@@ -1,31 +1,42 @@
 {
-  "name": "cypress",
+  "name": "book-store-e2e-test",
   "version": "1.0.0",
-  "description": "Test Framework using Cypress",
+  "description": "Tests to demo Cypress Cucumber integration",
   "main": "index.js",
   "scripts": {
-    "test": "run",
-    "cypress:open": "./node_modules/.bin/cypress open",
-    "cypress:run": "./node_modules/.bin/cypress run --spec **/*.spec.js"
+    "cy:run": "./node_modules/.bin/cypress run",
+    "cy:open": "./node_modules/.bin/cypress open",
+    "test:dev:chrome:headless": "env-cmd -f .env.dev cy:run --browser chrome",
+    "test:dev:run": "npm run cleanup && env-cmd -f .env.dev npm run cy:run",
+    "test:dev:debug": "npm run cleanup && env-cmd -f .env.dev npm run cy:open",
+    "test:sit:debug": "npm run cleanup && env-cmd -f .env.sit npm run cy:open",
+    "test:sit:run": "npm run cleanup && env-cmd -f .env.sit npm run cy:run",
+    "report": "node cucumber-html-report.js",
+    "cleanup":"rimraf ./cypress/cucumber-json"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gagneet/plutora-cypress.git"
-  },
-  "keywords": [
-    "cypress",
-    "test",
-    "framework",
-    "ui"
-  ],
-  "author": "gagneet",
+  "author": "",
+  "private": true,
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/gagneet/plutora-cypress/issues"
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
   },
-  "homepage": "https://github.com/gagneet/plutora-cypress#readme",
   "devDependencies": {
-    "cypress": "^8.3.0",
-    "faker": "^5.5.3"
+    "@types/chai": "^4.2.19",
+    "@types/cypress-cucumber-preprocessor": "^4.0.0",
+    "cypress": "^7.7.0",
+    "cypress-cucumber-preprocessor": "^1.11.0",
+    "device-detector-js": "^2.2.10",
+    "dotenv": "^10.0.0",
+    "env-cmd": "^10.1.0",
+    "multiple-cucumber-html-reporter": "^1.18.0",
+    "tsify": "^4.0.1",
+    "typescript": "^3.4.5",
+    "rimraf": "^3.0.2"
   }
 }
